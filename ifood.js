@@ -9,8 +9,8 @@ function App(){
     return(
        <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name = "Lista" component = {ListView}/>
-            <Stack.Screen name = "Detalhe" component = {DetailView}/>
+            <Stack.Screen name = "HamburguerList" component = {ListView}/>
+            <Stack.Screen name = "HamburguerDetails" component = {DetailView}/>
         </Stack.Navigator>
        </NavigationContainer> 
     ) 

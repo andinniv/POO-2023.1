@@ -5,14 +5,16 @@ import {dados} from "./db";
 function ListItem({element, navigation}){
 
     function onPressItem(){
-        navigation.navigate("Detalhe", {burgue: element});
+        navigation.navigate("HamburguerDetails", {burgue: element});
     }
     return(
-        <View style={{paddingTop:40, alignItems: "center"}}>
+        <View style={{alignItems: "center"}}>
             <TouchableOpacity onPress = {onPressItem}>
-                <Image style= {{height: 100, width:100}} 
+                <Image style= {{height: 100, width:100, borderRadius: 15, margin: 20}} 
                        source={{uri: element.imagem}}/>
-                <Text>{element.nome}</Text>      
+                <View style = {{alignItems: "center"}}>
+                    <Text style = {{fontSize: 15}}>{element.nome}</Text>
+                </View>  
             </TouchableOpacity>  
         </View>
     )
@@ -21,8 +23,8 @@ function ListItem({element, navigation}){
 function ListView(props){
 
     return(
-        <View style={{paddingTop: 10, flex:1}}>
-            <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor: "burlywood"}}>
+            <View>
                 <FlatList 
                     data = {dados}
                     renderItem = {
